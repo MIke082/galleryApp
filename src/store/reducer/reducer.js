@@ -5,7 +5,7 @@ const initialState = {
         {
             id: 1,
             image: '../../images/1.jpg',
-            title: 'Mike',
+            title: 'New York',
             comments: [
                 {
                     'name': 'Nick',
@@ -24,7 +24,7 @@ const initialState = {
         {
             id: 2,
             image: '../../images/2.jpg',
-            title: 'Nick',
+            title: 'Tbilisi',
             comments: [
                 {
                     'name': 'Nick',
@@ -35,7 +35,7 @@ const initialState = {
         {
             id: 3,
             image: '../../images/3.jpg',
-            title: 'Anna',
+            title: 'Chicago',
             comments: [
                 {
                     'name': 'Nick',
@@ -56,18 +56,23 @@ const reducer = (
     action
 ) => {
     switch (action.type) {
-        case actionTypes.ADD_NEW_COMMETN:
-            const newComment = {
+        case actionTypes.ADD_NEW_POST:
+            const newPost = {
                 id: Math.random(),
-                image: action.comment.image,
-                name: action.comment.name,
-                comment: action.comment.comment,
+                image: action.post.image,
+                title: action.post.title,
+                comment: action.post.comment,
             }
             return {
                 ...state,
-                data: state.data.concat(newComment),
+                data: state.data.concat(newPost),
             }
+
+        case actionTypes.ADD_NEW_POST:
+            return { ...state, posts: [...state.posts.filter(p => p !== state.data), { ...state.data, comments: 1 }] };
+
     }
+
     return state
 }
 

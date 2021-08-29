@@ -17,7 +17,7 @@ function App() {
         <Route path="/card">
             <Card />
           </Route>
-          <Route path="/addComment">
+          <Route path="/addPost">
             <AddNewPost />
           </Route>
           <Route path="/mainPage">

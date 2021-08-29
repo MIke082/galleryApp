@@ -1,0 +1,26 @@
+.card_page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.comment{
+    color: #226ce6;
+    font-weight: bold;
+}
+
+.btn{
+    background-color: #226ce6;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    padding-bottom: 10px;
+}
+
+.title{
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
